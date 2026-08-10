@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI RPG Maker - Prototype</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #111;
+            color: white;
+            font-family: sans-serif;
+        }
+
+        #game {
+            width: 100%;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        #screen {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #333;
+            overflow: hidden;
+        }
+
+        #background {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .object {
+            position: absolute;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .object:hover {
+            border-color: yellow;
+        }
+
+        #desk {
+            left: 15%;
+            bottom: 15%;
+            width: 30%;
+            height: 30%;
+        }
+
+        #painting {
+            left: 55%;
+            top: 15%;
+            width: 20%;
+            height: 30%;
+        }
+
+        #switch {
+            left: 62%;
+            top: 25%;
+            width: 6%;
+            height: 10%;
+            display: none;
+        }
+
+        #door {
+            right: 5%;
+            top: 20%;
+            width: 15%;
+            height: 60%;
+        }
+
+        #message {
+            min-height: 60px;
+            padding: 15px;
+            background: #222;
+        }
+
+        #inventory {
+            padding: 15px;
+            background: #181818;
+        }
+
+        .item {
+            display: inline-block;
+            padding: 8px 12px;
+            margin: 4px;
+            border: 1px solid #777;
+            cursor: pointer;
+        }
+
+        .selected {
+            border-color: yellow;
+            color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="game">
+
+    <div id="screen">
+
+        <img id="background"
+             src="https://placehold.co/1600x900/555/fff?text=Room">
+
+        <div id="desk"
+             class="object"
+             data-object="desk"></div>
+
+        <div id="painting"
+             class="object"
+             data-object="painting"></div>
+
+        <div id="switch"
+             class="object"
+             data-object="switch"></div>
+
+        <div id="door"
+             class="object"
+             data-object="door"></div>
+
+    </div>
+
+    <div id="message">
+        部屋にいる。何か調べてみよう。
+    </div>
+
+    <div id="inventory">
+        <strong>アイテム：</strong>
+        <div id="items"></div>
+    </div>
+
+</div>
+
+<script src="engine.js"></script>
+
+</body>
+</html>
